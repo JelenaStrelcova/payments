@@ -18,3 +18,26 @@ Accounts:
   ACCOUNT_C (empty)
   
   ACCOUNT_D (empty)
+  
+  
+  Rest examples
+  
+  1. Pay:
+  
+  POST localhost:8080/payments/pay
+
+{
+	"debitAccountNumber" : "ACCOUNT_A",
+	"creditAccountNumber" : "ACCOUNT_B",
+	"amount" : 100,
+	"currencyCode" : "EUR",
+	"fillOrKill" : true
+}
+
+2. Get payment status:
+
+GET localhost:8080/payments/paymentstatus/1
+
+3. Get account balance:
+
+GET localhost:8080/payments/accountbalance?accountNumber=ACCOUNT_A&currencyCode=EUR
